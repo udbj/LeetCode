@@ -33,17 +33,17 @@ class Solution:
         new_node = None
         head_node = None        
         
-        while True:
+        prev_node = new_node
+        new_node = ListNode(sum_num%10)
+        head_node = new_node
+        sum_num = sum_num//10
+        
+        while sum_num is not 0:
             prev_node = new_node
             new_node = ListNode(sum_num%10)
-            if prev_node is not None:
-                prev_node.next = new_node
-            else:
-                head_node = new_node
+            prev_node.next = new_node
 
             sum_num = sum_num//10
             
-            if sum_num is 0:
-                break
         return head_node
             
