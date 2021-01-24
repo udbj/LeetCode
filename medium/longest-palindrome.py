@@ -11,7 +11,7 @@ class Solution:
         for i, c in enumerate(s):
             j = ref
             end_points  = set()
-            if lmax > ref-i:
+            if lmax > ref-i-1:
                 break
             while j > i-1:
                 if s[j-1] == s[i]:
