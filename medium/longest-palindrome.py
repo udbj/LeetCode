@@ -10,25 +10,23 @@ class Solution:
         
         for i, c in enumerate(s):
             j = ref
-            end_points  = set()
+            
             if lmax > ref-i-1:
                 break
+                
             while j > i-1:
                 if s[j-1] == s[i]:
-                    end_points.add(j)
+                    comp = set()
+                    subs = s[i:j]
+                    lsub = len(subs)
+                    
+                    comp.add(rs[ref-j:ref-i])
+                    
+                    if lsub > lmax and subs in comp:
+                        start = i
+                        end = j
+                        lmax = lsub
                 j = j -1
-            
-            for pt in end_points:
-                comp = set()
-                subs = s[i:pt]
-                lsub = len(subs)
-                
-                comp.add(rs[ref-pt:ref-i])
-                
-                if lsub > lmax and subs in comp:
-                    start = i
-                    end = pt
-                    lmax = lsub
 
                 
         return s[start:end]
