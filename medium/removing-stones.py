@@ -33,7 +33,7 @@ class Solution:
                 s = a
 
         if m + s >= l:
-            return (m + s + l) //2
+            return (m + s + l) >> 1
         else:
             return m + s
         
